@@ -9,13 +9,13 @@ public class Runner {
 
     public static void main(String[] args) {
         Author author1 = new Author("Joanne", "Rowling", 52);
-        DBAuthor.save(author1);
+        DBAuthor.saveOrUpdate(author1);
         Author author2 = new Author("Gerge", "Martin", 69);
-        DBAuthor.save(author2);
+        DBAuthor.saveOrUpdate(author2);
         Book book1 = new Book("Harry Potter and the Philosopher's Stone", 1997, "Joanne Rowling");
-        DBBook.save(book1);
+        DBBook.saveOrUpdate(book1);
         Book book2 = new Book("A Game of Thrones", 1981, "George Martin");
-        DBBook.save(book2);
+        DBBook.saveOrUpdate(book2);
 
         List<Author> allAuthors = DBAuthor.getAll();
         List<Book> allBooks = DBBook.getAll();
@@ -24,10 +24,10 @@ public class Runner {
         Book thrones = DBBook.find(book2.getId());
 
         author1.setFirst_name("George");
-        DBAuthor.save(author1);
+        DBAuthor.saveOrUpdate(author1);
 
         book2.setYearOfPub(1991);
-        DBBook.save(book2);
+        DBBook.saveOrUpdate(book2);
 
         DBAuthor.delete(author1);
         DBBook.delete(book1);
@@ -36,8 +36,8 @@ public class Runner {
 
         Author author3 = new Author("Stephen", "King", 70);
         Book book3 = new Book("Carrie", 1974, "Stephen King");
-        DBAuthor.save(author3);
-        DBBook.save(book3);
+        DBAuthor.saveOrUpdate(author3);
+        DBBook.saveOrUpdate(book3);
         List<Author> allAuthors3 = DBAuthor.getAll();
         List<Book> allBooks3 = DBBook.getAll();
 

@@ -14,7 +14,7 @@ public class DBBook {
     private static Session session;
     private static Transaction transaction;
 
-    public static void save(Book book) {
+    public static void saveOrUpdate(Book book) {
         session = HibernateUtil.getSessionFactory().openSession();
         try {
             transaction = session.beginTransaction();
